@@ -1,7 +1,7 @@
 # Material Design Web CSS Libary
 
 Experimental attempt to make "Material Design Web" simple and without all those BlingBling from modern Libarys.
-(To write even Libarys with stuff like Lit, Sass and other stuff, which are only exist to reduse some lines of code, is simple the wrong future.)
+(To write even Libarys with Lit, Sass and other stuff, which are only exist to reduse some lines of code, is simple the wrong future.)
 
 First I thought about to rewrite it as pure Web Components without BlingBling, React Components (would be reduce performance) but than I found out the power of pure css by simple write css for classes and already existing elemts.
 
