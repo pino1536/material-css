@@ -1,41 +1,70 @@
 input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    display: inline-flex;
-    position: relative;
-    vertical-align: top;
-    border-color: #49454f;
+    appearance: none;           /* default overide  */
+    -webkit-appearance: none;   /* default overide  */
+    cursor: pointer;            /* default overide  */
+    margin: 0px;                /* default overide  */
     border-style: solid;
     border-width: 2px;
-    border-start-start-radius: 2px;
-    border-start-end-radius: 2px;
-    border-end-end-radius: 2px;
-    border-end-start-radius: 2px;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    margin: 0;
-    place-items: center;
-
-}
-input[type="checkbox"]::after {
-    opacity: 0;
-    content: "";
-    height: 18px;
-    width: 18px;
-    margin: -2px;
     border-radius: 2px;
-    clip-path: path(M20.687,38.332c-2.072,2.072-5.434,2.072-7.505,0L1.554,26.704c-2.072-2.071-2.072-5.433,0-7.504 c2.071-2.072,5.433-2.072,7.505,0l6.928,6.927c0.523,0.522,1.372,0.522,1.896,0L36.642,7.368c2.071-2.072,5.433-2.072,7.505,0 c0.995,0.995,1.554,2.345,1.554,3.752c0,1.407-0.559,2.757-1.554,3.752L20.687,38.332z);
+    border-color: #49454f;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color:#1d1b20;
+    opacity: 0;
+    /* WIP: transition */
+}
+
+input[type="checkbox"]:hover::before {
+    opacity: 0.08;
+    /* WIP: transition */
+}
+
+input[type="checkbox"]:active::before {
+    opacity: 0.12;
+    /* WIP: transition */
+}
+
+input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    width: inherit;
+    height: inherit;
     background-color: #6750a4;
+    opacity: 0;
     transition-duration: 150ms, 50ms;
     transition-property: transform, opacity;
     transition-timing-function: cubic-bezier(0.3, 0, 0.8, 0.15), linear;
     transform: scale(0.6);
 }
-input[type="checkbox"]:checked::after::after {
+
+input[type="checkbox"]:checked::after {
     opacity: 1;
     transition-duration: 350ms, 50ms;
     transition-property: transform, opacity;
     transition-timing-function: cubic-bezier(0.05, 0.7, 0.1, 1), linear;
     transform: scale(1);
+}
+
+input[type="checkbox"]:disabled {
+    border-color: #1d1b20;
+    opacity: 0.38;
+    cursor: default;
+}
+
+input[type="checkbox"]:disabled::before {
+    opacity: 0;
 }

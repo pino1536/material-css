@@ -1,3 +1,7 @@
+body {
+    margin: 20px;
+}
+
 :root {
 /* Shape
    --md-sys-shape-corner-extra-large: ;
